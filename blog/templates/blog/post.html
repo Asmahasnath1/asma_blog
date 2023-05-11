@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Blog</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+	<header>
+
+	<center>
+		<h1>My Blog</h1>
+		<nav>
+			<ul>
+				<li><a href="{% url 'blog:home' %}">Home</a></li>&nbsp&nbsp&nbsp
+				<li><a href="{% url 'blog:about' %}">About</a></li>&nbsp&nbsp&nbsp
+				<li><b><a href="{% url 'blog:postblog' %}">Post</a></b></li>&nbsp&nbsp&nbsp
+
+			</ul>
+		</nav>
+	</center>
+	</header>
+	<title>
+   		Please post your blog.
+	</title> 
+	<main>
+		<center>
+    <h1>Post a blog here</h1>
+    <hr>
+<form role="form" action="" method="post">
+{% csrf_token %}
+{{ form.as_p}}
+<input  type="submit" value="Send">
+<input  type="reset" value="Cancel">
+</form>
+</center>
+	</main>
+	
+	<footer>
+		<p>&copy; {{ year }} My Blog. All rights reserved.</p>
+	</footer>
+</body>
+</html>

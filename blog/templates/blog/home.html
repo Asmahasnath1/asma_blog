@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Blog</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+	<header>
+	<center>
+		<h1>My Blog</h1>
+		<nav>
+			<ul>
+				<li><b><a href="{% url 'blog:home' %}">Home</a></b></li>&nbsp&nbsp&nbsp
+				<li><a href="{% url 'blog:about' %}">About</a></li>&nbsp&nbsp&nbsp
+				
+				<li><a href="{% url 'blog:postblog' %}">Post</a></li>&nbsp&nbsp&nbsp
+				
+			</ul>
+		</nav>
+	</center>
+	</header>
+	
+	<main>
+		
+		
+{% for  i  in  blogdb %}
+
+<tr>
+    <h2><td>{{ i.title }}</td></h2><br>
+    <b><td>{{ i.text }}</td></b></h3><br><br>
+    <td>-{{ i.author }}</td><br>
+    <td>{{ i.created_date }}</td><br><br><br>
+    <hr></hr>
+</tr>
+{% endfor %}
+
+	</main>
+	<footer>
+		<p>&copy; {{ year }} My Blog. All rights reserved.</p>
+	</footer>
+</body>
+</html>

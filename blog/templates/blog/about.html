@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Blog</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+	<header>
+	<center>
+		<h1>My Blog</h1>
+		<nav>
+			<ul>
+				<li><a href="{% url 'blog:home' %}">Home</a></li>&nbsp&nbsp&nbsp
+				<li><b><a href="{% url 'blog:about' %}">About</a></b></li>&nbsp&nbsp&nbsp
+				
+				<li><a href="{% url 'blog:postblog' %}">Post</a></li>&nbsp&nbsp&nbsp
+				
+			</ul>
+		</nav>
+	</center>
+	</header>
+	
+	<main>
+		<h3>JUST WRITE ANY THING YOUR MIND AND HEART IS WILLING TO SAY.
+		You may be struggling to come up with ideas or who may be feeling creatively blocked. By giving yourself permission to write or create whatever comes to mind, you can often tap into deeper levels of inspiration and produce work that is more personal and meaningful.
+
+At the same time, it's important to remember that with this freedom comes responsibility. It's important to use your creativity and self-expression in a thoughtful and respectful way, and to consider the impact that your words or artwork may have on others.
+
+Ultimately, the phrase "just write anything your mind and heart is willing to say" is a call to embrace your own unique voice and perspective, to trust your instincts and intuition, and to have the courage to share your true self with the world.
+
+
+
+
+ </h3>
+	</main>
+	
+	<footer>
+		<p>&copy; {{ year }} My Blog. All rights reserved.</p>
+	</footer>
+</body>
+</html>
